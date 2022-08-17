@@ -5,6 +5,11 @@ const mongoose = require("mongoose");
 
 const availabilitySchema = mongoose.Schema(
   {
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      ref: "Availability",
+    },
     text: {
       type: String,
       required: true,
