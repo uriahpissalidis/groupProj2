@@ -7,12 +7,12 @@ const {
   deleteAvailabilities,
 } = require("../controllers/availabilityController");
 
-router.get("/", getAvailabilities);
+const { protect } = require("../middleware/authMiddleware");
 
-router.post("/", setAvailabilities);
-
-router.put("/:id", updateAvailabilities);
-
-router.delete("/:id", deleteAvailabilities);
+//VERIFY IF THESE WORK
+router.get("/", (protect, getAvailabilities));
+router.post("/", (protect, setAvailabilities));
+router.put("/:id", (protect, updateAvailabilities));
+router.delete("/:id", (protect, deleteAvailabilities));
 
 module.exports = router;
