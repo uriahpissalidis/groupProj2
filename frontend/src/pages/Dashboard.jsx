@@ -2,8 +2,8 @@ import {useEffect} from 'react'
 import {useNavigate} from 'react-router-dom'
 import {useSelector, useDispatch} from 'react-redux'
 import AvailabilityForm from '../components/AvailabilityForm'
+import AvailabilityItem from '../components/AvailabilityItem'
 import Spinner from '../components/Spinner'
-import { getAvailabilities } from '../features/availabilities/availabilitySlice'
 import {getAvailabilities, reset} from '../features/availabilities/availabilitySlice'
 
 function Dashboard() {
